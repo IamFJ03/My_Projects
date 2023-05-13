@@ -1,1 +1,239 @@
-contact
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <style>
+      * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.section-p1 {
+  padding: 40px 80px;
+}
+footer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+footer .col{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+footer .logo{
+  margin-bottom: 30px;
+  width: 30%;
+  height: auto;
+}
+
+footer h4{
+  font-size: 14px;
+  padding-bottom: 20px;
+  margin-top:70px;
+}
+
+footer p{
+  font-size: 13px;
+  margin: 0 0 8px 0;
+}
+
+footer a{
+  font-size: 13px;
+  text-decoration: none;
+  color: #222;
+  margin-bottom: 10px; 
+}
+footer .copyright{
+  width: 100%;
+  text-align: center;
+}
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  
+}
+.main{
+  color:white;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+a{
+text-decoration:none;
+}
+
+
+.contact {
+  max-width: 80%;
+  margin:50px 0 0 80px;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.contact h1 {
+  margin-bottom: 20px;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact label {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.contact input[type="text"],
+.contact input[type="email"],
+.contact textarea {
+  width:80%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+.contact input[type="text"]:focus,
+.contact input[type="email"]:focus,
+.contact textarea:focus {
+  outline: none;
+  box-shadow: 0 0 5px #333;
+}
+input{
+  width:80%;
+}
+textarea{
+ width:50%;
+}
+.contact input[type="submit"] {
+  background-color: #333;
+  color: #fff;
+}
+.people{
+  margin:-400px 0 0 600px;
+}
+img{
+  height:100px;
+  width:100px;
+  margin-top:30px;
+  margin-left: -120px;
+}
+span{
+  font-size:large;
+  font-weight:bold;
+}
+p{
+  margin-top:-110px;
+  font-size: small;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <a class="main" href="welcome.php">FLIGHTS</a>
+      </div>
+      <ul>
+        <li><a href="welcome.php">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#">Services</a></li>
+        
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="contact">
+    <h1>Contact Us</h1>
+    <form action="#" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Your name.." required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Your email.." required>
+
+      <label for="subject">Subject:</label>
+      <input type="text" id="subject" name="subject" placeholder="Subject.." required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" placeholder="Write your message.." required></textarea>
+
+      <input type="submit" value="Submit">
+    </form>
+   
+  </div>
+  </section>
+
+  <footer class="section-p1">
+    <div class="col">
+        
+        <h4>Contact</h4>
+        <p><strong>Address: </strong> 521 Old Purulia Road, Road 15, Jamshedpur</p>
+        <p><strong>Phone: </strong> +91 9334656246 /(+91) 1800 2372 6789</p>
+        <p><strong>Hours: </strong> 10:00 - 18:00, Mon - Sat </p>
+      </div>
+    </div>
+    <div class="col">
+      <h4>About</h4>
+      <a href="#">About Us</a>
+      <a href="#">Delivery Information</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms & Conditions</a>
+      <a href="#">Contact Us</a>
+  </div>
+
+  <div class="col">
+      <h4>My Account</h4>
+      <a href="#">Sign In</a>
+      <a href="#">View Cart</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">My Wishlist</a>
+      <a href="#">Track My Order</a>
+      <a href="#">Help</a>
+      <p>Secure Payment Gateways</p>
+      <img src="img/pay/pay.png" alt="">
+  </div>
+
+  <div class="copyright">
+      <p>© 2023, Groupy etc - HTML CSS Ecommerce Website
+      <h6> Designed by Arshi Ali 😊 </h6>
+      </p>
+  </div>
+
+  </footer>
+</body>
+</html>

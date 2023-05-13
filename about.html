@@ -1,36 +1,208 @@
+<!DOCTYPE html>
 <html>
-    <head>
-    <style>
-       body{
-            background-image: url('airplane.jpg');
-        } 
-     .about{
-         height:570px;
-         width:800px;
-         margin:50px 0 0 50px;
-         background-color: rgb(255, 255, 255, 0.5);
-     }
-     h2{
-         
-         text-align: center;
-     }
-     p{
-         font-size: larger;
-         padding-left: 15px;
-     }
-    </style>
-    </head>
-    <body>
-        <div class="about">
-          <h2>ABOUT</h2>
-          <hr>
-          <p>Welcome,to Sky-Members Airline Reservation Site developed in 5th February
-              2023 founded by Mr. Faiz-Al Arsalan and the Co-founder Faheem Jawaid.Here we 
-              book airline tickets in most convenient manner provided to our clients/
-            customers based on their choices.
-              
-              
-          </p>
+  <head>
+    <title>About Us</title>
+    
+  </head>
+  <style>
+      body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+}
+
+nav ul li a.active {
+  background-color: #fff;
+  color: #333;
+}
+.section-p1 {
+  padding: 40px 80px;
+}
+footer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+footer .col{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+footer .logo{
+  margin-bottom: 30px;
+  width: 30%;
+  height: auto;
+}
+
+footer h4{
+  font-size: 14px;
+  padding-bottom: 20px;
+  margin-top:70px;
+}
+
+footer p{
+  font-size: 13px;
+  margin: 0 0 8px 0;
+}
+
+footer a{
+  font-size: 13px;
+  text-decoration: none;
+  color: #222;
+  margin-bottom: 10px; 
+}
+footer .copyright{
+  width: 100%;
+  text-align: center;
+}
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.about-section h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.team-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.team-section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.team-section li {
+  display: inline-block;
+  
+  margin-right: 10px;
+  text-align: center;
+}
+
+.team-section li:last-child {
+  margin-right: 0;
+}
+
+.team-section img {
+ 
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.team-section h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+img{
+    height:50px;
+    width:100px;
+}
+span{
+    font-size:large;
+}
+li{
+font-size:small;
+}
+
+  </style>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="welcome.php">Home</a></li>
+          <li><a href="about.html" class="active">About Us</a></li>
+          <li><a href="service.html">Our Services</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="about-section">
+        <h1>About Us</h1>
+        <p>We are a company that specializes in providing high-quality products and services to our customers. Our team is made up of experienced professionals who are dedicated to helping you achieve your goals.</p>
+        <p>At our company, we believe in putting our customers first. That's why we work hard to provide you with the best possible experience every time you interact with us.</p>
+      </section>
+      <section class="team-section">
+        <h2>Meet Our Team</h2>
+        <ul>
+          <li>
+            <img src="Faheem.jpg" alt="">
+            <p><span>Faheem Jawaid</span><br>C.E.O <br> Senior Developer <br>Phone: +000 123 000 77 88 <br>Email: Faheemjawaid10@gmail.com</p>
+          </li>
+          <li>
+            <img src="Faiz1.jpg" alt="">
+            <p><span>Faiz alam</span><br>Co-Developer <br>Phone: +000 123 000 77 88 <br>Email: mdfaizalamansari@gmail.com</p>
+            
+          </li>
+          <li>
+            <img src="Faisal1.jpg" alt="">
+            <p><span>Faisal ansari</span><br>Manager <br>Phone: +000 123 000 77 88 <br>Email: fsisal19@gmail.com</p>
+            
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer class="section-p1">
+        <div class="col">
+            
+            <h4>Contact</h4>
+            <p><strong>Address: </strong> 521 AzadNagar Mango, Road No.2, Jamshedpur</p>
+            <p><strong>Phone: </strong> +91 7209824916 /(+91) 1800 2372 6789</p>
+            <p><strong>Hours: </strong> 10:00 - 18:00, Mon - Sat </p>
+          </div>
         </div>
-    </body>
+        <div class="col">
+          <h4>About</h4>
+          <a href="#">About Us</a>
+          <a href="#">More Information</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Contact Us</a>
+      </div>
+    
+      <div class="col">
+          <h4>My Account</h4>
+          <a href="#">Sign In</a>
+          <a href="#">View Flights</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Help</a>
+          <p>Secure Payment Gateways</p>
+         
+      </div>
+    
+      <div class="copyright">
+          <p>© 2023, Groupy etc - HTML CSS Ecommerce Website
+          <h6> Designed by Arshi Ali 😊 </h6>
+          </p>
+      </div>
+    
+      </footer>
+  </body>
 </html>

@@ -1,149 +1,193 @@
+<?php
+//Use need to create a database first named login and inside that table
+
+define('DB_SERVER','localhost');
+define('DB_USERNAME','root');
+define('DB_PASSWORD','');
+define('DB_NAME','login');
+
+$conn = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_NAME);
+
+if($conn==false){
+    dir('Error:Cannot connect');
+}
+else{
+       if(isset($_POST['show'])){
+        if(empty($_POST['from'])){
+            $alert="<script>alert('Departure place is required');</script>";
+            echo $alert;
+        }
+        else if(empty($_POST['destination'])){
+            $alert="<script>alert('Destination place is required');</script>";
+            echo $alert;
+        }
+        else if(empty($_POST['travellers'])){
+            $alert="<script>alert('Number of traveller is required');</script>";
+            echo $alert;
+        }
+        else{
+           $from=$_POST['from'];
+           $destination=$_POST['destination'];
+           if($from=="Kolkata" && $destination=="Hyderabad" || $from=="Hyderabad" && $destination=="Kolkata"){
+           header("location:K_TO_H.html");
+           }
+           else if($from=="Delhi" && $destination=="Mumbai" || $from=="Mumbai" && $destination=="Delhi"){
+            header("location:d-to-m.html");
+           }
+            else if($from=="Gujrat" && $destination=="Pune" || $from=="Pune" && $destination=="Gujrat"){
+                header("location:g-to-p.html");
+           }
+           else if($from=="Bhopal" && $destination=="Chennai" || $from=="Chennai" && $destination=="Bhopal"){
+            header("location:b-to-c.html");
+           }
+          
+           else if($from=="Lukhnow" && $destination=="Bhubaneshwar" || $from=="Bhubaneshwar" && $destination=="Lukhnow"){
+             header("location:b-to-l.html");
+           }
+           else if($from=="Rajasthan" && $destination=="Dehradun" || $from=="Dehradun" && $destination=="Rajasthan"){
+           header("location:r-to-d.html");
+           }
+
+}
+}
+}
+
+?>
 <html>
-    <head>
-        <style>
-            body{
-                margin:0 0 0 0;
-                background-image: url('airplane.jpg');
-                opacity:0.8;
-                background-repeat: no-repeat;
-                background-size: 1000px 500px;
-            }
-            .nav{
-               height:75px;
-               background-color:  rgb(0, 0, 0, 0.5);
-              
-            }
-            ul{
-             list-style: none;
-             display: inline-flex;
-            }
-            li{
-               
-                font-size: larger;
-                margin-top:5px;
-            }
-            a{
-                text-decoration: none;
-                color:black;
-                
-            }
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            font-family: sans-serif;
+        }
+        .frame{
+        background-image:url('view.jpg');
+        width:100%;
+        height:80%;
+        color:white;
+        }
+        .head{
+            color:white;
+            background-image:linear-gradient(to right,purple,black);
+            width:100%;
+            height:60px;
+        }
+        .more{
+            border-radius: 10px;
+            padding: 10px 20px 10px 20px;
+            color:white;
+            background-image:linear-gradient(to right,red,black);
+            cursor:pointer;
+            margin:60px 0 0 45px;
             
-            h2{
-              margin: 5 10 0 -10; 
-            }
-            .dhikchik{
-                margin-left:190px;
-                font-weight: bold;
-               
-            }
-            .dhoom{
-                
-                height:30px;
-                width:200px;
-                margin:15px 0 0 195px;
-                font-size: larger;
-                
-            }
-            li:hover{
-                border-radius: 2px;
-                box-shadow:inset 0 150px 0 0 rgb(255, 255, 255,0.8);
-                transition: 0.8s;
-                
-            }
-            .register:hover{
-                background-color:rgb(255, 255, 255, 0.7);
-                 border-radius: 10px;
-                padding:0 25px 0 25px;
-                transition:0.5s;
-            }
-            .Style{
-                height:150px;
-                width:300px;
-                
-                padding:20px;
-                background-color: rgb(0, 0, 0, 0.5);
-                border-radius: 25px;
-                transition: 0.5s;
-            }
-            .main{
-                height:300px;
-                width:600px;
-               
-                margin:10px 0 0 160px;
-                padding:20px;
-                background-color: rgb(0, 0, 0, 0.5);
-                border-radius: 25px;
-                transition: 0.5s;
-            }
-            .home,.service,.about,.contact{
-                margin:10px 0 -200px 10px;
-                padding:10 25 10 25;
-                font-size: larger; 
-            }
-            .single,.multi{
-                font-weight:bold;
-                padding:5 5 5 5;
-            }
-            .dep{
-                padding:5 0 5 10;
-                width:200px;
-                border-radius:5px;
-                font-weight:bold;
-                background-color:rgb(0,0,0,0.2);
-                color:white;
-            }
-            .arr{
-                padding:5 0 5 10;
-                width:200px;
-                border-radius:5px;
-                font-weight:bold;
-                background-color:rgb(0,0,0,0.2);
-                color:white;
-            }
-            .trip{
-                list-style:none;
-                display:inline-flex;
-            }
-            input:checked ~ .single{
-                background-color:rgb(255, 255, 255, 0.8);
-            }
-            input:checked ~ .multi{
-                background-color:rgb(255, 255, 255, 0.8);
-            }
-            </style>
-            </head>
-            <body>
-               
-            <div class="nav">
-                <ul>
-                   <h2><a href="welcome.php">FLIGHTS</a></h2>
-                    
-                    <li><a class="home" href="welcome.php">Home</a></li>
-            <li><a class="service" href="service.html">Service</a></li>
-            <li><a class="about" href="about.html">About</a></li>
-            <li><a class="contact" href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <h2 class="dhikchik">
-            Welcome to our new Airline seat booking page.
-        </h2>
-            <div class="main">
-            <ol class="trip">
-            <input type="radio"><li class="single">SINGLE TRIP</li>
-            <input type="radio"><li class="multi">MULTI TRIP</li>
-        </ol>
-                <h4>FROM:
-                    <input class="dep" type="text" placeholder="ENTER DEPARTURE PLACE">
-                    DESTINATION:
-                    <input class="arr" type="text" placeholder="ENTER ARRIVAL PLACE">    
-                </h4>
-                <h4>
-                    TRAVELLERS:
-                    <input class="dep" type="number" placeholder="ENTER TRAVELLERS">    
-                    DATE:
-                    <input class="arr" type="date" placeholder="ENTER TIME PLACE">
-                </h4>
-               <div class="dhoom"><a class="register" href="flight.html">SHOW FLIGHTS</a></div>
-            </div>
-            </body>
-        </html>
+        }
+        
+        .place,.city{
+            transform: translate(5%,200%) scale(1);
+        }
+        
+        .info{
+            background-color: rgb(17, 17, 17);
+            width:90%;
+            height: 25%;
+            padding-bottom:20px;
+            padding-right:30px;
+            margin: -100px 0 0 30px;
+            border-radius: 5px;
+            box-shadow: 6px 6px 6px;
+        }
+        a{
+            text-decoration: none;
+            color:white;
+            padding:0 20px 0 20px;
+        }
+        .link{
+            margin-top:-10px;
+            margin-left: 730px;
+        }
+        a:hover{
+            
+            border-bottom: 2px solid black;
+        }
+        input{
+            display: block;
+            padding:10px 0 10px 0;
+            border-radius:10px;
+            background-color: rgba(83, 82, 82, 0.3);
+            border-color: purple;
+            color: rgb(95, 97, 99);
+        }
+        .from{
+            color: aliceblue;
+            transform:translate(1%,74%) scale(1);
+        }
+        .destination{
+            color: aliceblue;
+            margin:-30px 0 0 240px;
+        }
+        .in{
+            color: aliceblue;
+            transform:translate(44%,-250%) scale(1);
+        }
+        
+        .show{
+            color:white;
+            border-radius: 10px;
+            margin:-200px 0 0 800px;
+            padding:10px 20px 10px 20px;
+            background-image:linear-gradient(to right,purple,black);
+            cursor:pointer;
+        }
+        .popular{
+            margin-left: 450px;
+        }
+        .travellers{
+            color:white;
+          transform:translate(60%,-125%) scale(1);
+        }
+        button:hover{
+            cursor:pointer;
+        }
+        .name{
+            margin:0 0 0 20px;
+        }
+    </style>
+    <body>
+        <div class="head">
+            <h2 class="name">Jet Ways</h2>
+            <h4 class="link">
+                <a href="welcome.html">Home</a>
+                <a href="service.html">Service</a>
+                <a href="contact.html">Contact</a>
+                <a href="about.html">About</a>
+            </h4>
+         </div>
+        <div class="frame">
+         
+         <h2 class="place">Beautiful Place</h2>
+         <h1 class="city">Hyderabad City</h1>
+         <button class="more">More Information</button>
+         
+        </div><form method="post">
+        <div class="info">
+            <h3 class="from">Travelleing From:
+                <input type="text" name="from" placeholder="From:">
+            </h3>
+            
+            
+            <h3 class="Destination">To:
+                <input type="text" name="destination" placeholder="to:">
+            </h3>
+            <h3 class="travellers">Travellers:
+                <input type="number" name="travellers" placeholder="to:">
+            </h3>
+            <h3 class="in">Check In:
+                <input type="date">
+            </h3>
+            
+            <button class="show" name="show">Show Flights</button>
+        </div>
+        </form>
+        
+    </body>
+</html>

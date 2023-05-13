@@ -11,8 +11,8 @@ if($conn==false){
 }
 
 if(isset($_POST["submit"])){
-    if (empty($username) || empty($email) || empty($password)) {
-        $error= 'all fields are required';
+    if (empty($username) || empty($email) || empty($password)){
+        $error= 'all fields are required' ;
     }
     if(!empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['password'])){
     $username = $_POST['username'];
@@ -24,7 +24,7 @@ if(isset($_POST["submit"])){
         $error = 'Invalid email address';
     } else {
         // Store the user data in a database or a file
-        $sql="INSERT INTO `users` (`username`, `email`, `password`) VALUES('$username', '$email', '$password');";
+        $sql="INSERT INTO `users`(`username`, `email`, `password`) VALUES('$username', '$email', '$password');";
         $result=mysqli_query($conn,$sql);
 
        if($result){
@@ -34,7 +34,7 @@ if(isset($_POST["submit"])){
         header('Location: welcome.php');
        }
        else{
-           echo "table was not inserted with any row";
+        echo "Username already taken";
        }
         exit;
     }
@@ -52,27 +52,30 @@ if(isset($_POST["submit"])){
     text-align: center;
 }
 .sign-in{
+    padding-top:5px;
+    padding-bottom:5px;
     background-color:rgb(255,255,255, 0.5);
     border-radius:10px;
-    height: 265px;
-    width:280px;
-    margin:80px 0 0 330px;
+    height: 355px;
+    width:300px;
+    margin:40px 0 0 300px;
 }
 .submit{
-    margin: 15px 0 0 167px;
+    margin: 15px 0 0 105px;
     padding:5 15 5 15;
 }
 .log-in{
     color:black;
     text-decoration:none;
     border-radius:5px;
-    margin:15px 0 0 400px;
+    margin:100px 0 0 100px;
     font-size:larger;
     padding:5 25 5 25;
 }
+
 a:hover{
     
-    box-shadow:inset 0 150px 0 0 rgb(125, 125, 125);
+    background-color:rgb(255,255,255,0.5);
     transition:0.5s;
 }
 input{
@@ -88,7 +91,7 @@ p,input{
     margin-left:25px;
 }
 .faheem{
-    margin:-30px 0 35px 0; 
+    margin:0 0 0 25px; 
 }
         </style>
         <body>
@@ -106,12 +109,13 @@ p,input{
 
                 <p>Password:</p>
                 <input type="Password"name="password" id="confirmPassword" placeholder="Enter Password">
+                <p>Confirm-Password:</p>
+                <input type="Password"name="password" id="confirmPassword" placeholder="Enter Password">
                 <button class="submit" name="submit" type="submit">Sign in</button>
-</div>
-                <h3 class="faheem">Already have an account?</h3>
+                <h5 class="faheem">Already have an account?     </h5>        
                 <a class="log-in" href="login.php">log in</a>
+                </div>
                 
-
             </form>
         </body>
     </head>

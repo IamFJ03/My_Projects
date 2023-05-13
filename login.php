@@ -9,8 +9,7 @@ $conn = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_NAME);
 if($conn==false){
     dir('Error:Cannot connect');
 }
-
-if (isset($_POST['username'])) {
+if(isset($_POST['username'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     if(empty($username)){
@@ -43,15 +42,17 @@ if (isset($_POST['username'])) {
         body{
             margin:0;
             padding: 0;
-           background-image: url('back_p.jpg');
+            background-color:rgb(209, 197, 197);
+             
         }
         .login{
-            margin-left: 350px;
+            padding:10px 20px 120px 20px;
+            margin-left: 280px;
             margin-top: 70px;
             height:330px;
             width:300px;
-            background-color: rgb(0, 0, 0, 0.5);
-            border-radius: 10px;
+            background-color:white;
+            border-radius: 3px;
             text-align: justify;
         }
         p,input{
@@ -66,22 +67,35 @@ if (isset($_POST['username'])) {
             background-color: rgb(255, 255, 255, 0.5);
             padding-right: 45px;
             padding-bottom: 5px;
-            border-radius: 5px;
-            border:none;
+            border-radius: 3px;
+            border:1px solid black;
         }
         button{
-            background-color: rgb(237, 245, 251, 0.5);
-           margin-left: 370px;
+           
+           margin:-80px 0 0  350px;
            font-size: large;
-           border-radius: 5px;
+           
            padding-left: 30px;
            padding-right: 30px;
+        }
+        button:hover{
+            background-color:rgb(7, 7, 7);
+            color:white;
+            transition:0.5s;
         }
         h2{
             margin-left:75px;;
         }
         a{
             margin-left:40px;
+        }
+        .head{
+         height:25%;
+         width:100%;
+         background-color: black;
+         color:white;
+         padding:10px 20px 10px 20px;
+         margin:-8px 0 0 -20px;
         }
         </style>
     </head>
@@ -93,7 +107,9 @@ if (isset($_POST['username'])) {
     <?php endif; ?>
         <form action="" method="post">
              <div class="login">
-             <h2>Login Form</h2>
+                 <div class="head">
+             <h2>Welcome Back</h2>
+            </div>
              <p>Username:</p>
              <input type="text" name="username" class="ue" placeholder="Username">
 

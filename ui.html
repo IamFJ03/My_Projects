@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Airline Ticket Booking Page</title>
+	<style>
+        body {
+	font-family: Arial, sans-serif;
+	background-color: #f1f1f1;
+}
+
+header {
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+}
+
+main {
+	margin: 20px;
+	padding: 20px;
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+}
+
+label {
+	margin-top: 10px;
+}
+
+input[type=text], input[type=email], input[type=tel], select {
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+	margin-bottom: 20px;
+}
+
+button[type=submit] {
+	background-color: #333;
+	color: #fff;
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+}
+
+button[type=submit]:hover {
+	background-color: #444;
+}
+
+    </style>
+</head>
+<body>
+	<header>
+		<h1>Airline Ticket Booking</h1>
+	</header>
+	<main>
+		<form>
+			<h2>Flight Details</h2>
+			<label for="departure">Departure</label>
+			<input type="text" id="departure" name="departure">
+			<label for="arrival">Arrival</label>
+			<input type="text" id="arrival" name="arrival">
+			<label for="date">Date</label>
+			<input type="date" id="date" name="date">
+			<label for="class">Class</label>
+			<select id="class" name="class">
+				<option value="economy">Economy</option>
+				<option value="business">Business</option>
+				<option value="first">First Class</option>
+			</select>
+			<h2>Passenger Details</h2>
+			<label for="name">Name</label>
+			<input type="text" id="name" name="name">
+			<label for="email">Email</label>
+			<input type="email" id="email" name="email">
+			<label for="phone">Phone</label>
+			<input type="tel" id="phone" name="phone">
+			<button type="submit">Book Now</button>
+		</form>
+	</main>
+	<footer>
+		<p>&copy; 2023 Airline Name. All rights reserved.</p>
+	</footer>
+</body>
+</html>
